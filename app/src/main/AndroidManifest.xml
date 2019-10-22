@@ -22,6 +22,12 @@
         <activity android:name=".valuet_list_activity">
 
         </activity>
+        <activity android:name=".App">
+
+        </activity>
+        <activity android:name="auth_class">
+
+        </activity>
     </application>
 
 </manifest>

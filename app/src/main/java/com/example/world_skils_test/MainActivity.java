@@ -1,16 +1,14 @@
 package com.example.world_skils_test;
 
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout linear;
@@ -38,11 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public Dialog onDialogAlert (){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.auth, null));
-        return builder.create();
+    public void onDialogAlert (View view){
+        FragmentManager manager = getSupportFragmentManager();
+        DialogFragment nF = new auth_class();
+        nF.show(manager, "signin");
 
     }
 
