@@ -5,7 +5,7 @@
     android:layout_height="219dp"
     android:background="#5F5F5F"
     android:orientation="vertical">
-    <activity android:theme="@android:style/Theme.Holo.Dialog" />
+
 
     <TextView
         android:id="@+id/textView2"

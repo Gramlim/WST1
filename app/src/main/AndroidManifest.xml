@@ -25,7 +25,22 @@
         <activity android:name=".App">
 
         </activity>
-        <activity android:name="auth_class">
+        <activity android:name=".auth_class">
+
+        </activity>
+        <activity android:name=".main_class">
+
+        </activity>
+        <activity android:name=".setting_class">
+
+        </activity>
+        <activity android:name=".swip_pswrd_class">
+
+        </activity>
+        <activity android:name=".swp_log_class">
+
+        </activity>
+        <activity android:name=".about_app_class">
 
         </activity>
     </application>

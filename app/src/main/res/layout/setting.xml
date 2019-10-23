@@ -8,46 +8,92 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:background="#212121"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/setting_btn"
-            android:layout_width="wrap_content"
+        <View
+            android:id="@+id/view2"
+            android:layout_width="20dp"
             android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/client_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Степан Михайлович"
+            android:textColor="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
             android:layout_weight="1"
             android:background="#212121"
-            android:onClick="onSetting"
             app:srcCompat="@drawable/people" />
 
-        <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="49dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded"
-            android:orientation="horizontal">
-
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/exit"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#212121"
-            app:srcCompat="@drawable/logout" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical"></LinearLayout>
+        android:onClick="onInfo"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/swap_pasword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:drawableRight="@drawable/chevron"
+            android:gravity="center_vertical"
+            android:onClick="onPasSWP"
+            android:text="  Изменение пароля" />
+
+        <Button
+            android:id="@+id/swap_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:drawableRight="@drawable/chevron"
+            android:gravity="center_vertical"
+            android:onClick="onLogSWP"
+            android:text="  Изменение логина" />
+
+        <Button
+            android:id="@+id/history_visit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:drawableRight="@drawable/chevron"
+            android:gravity="center_vertical"
+            android:text="  История посещений" />
+
+        <Button
+            android:id="@+id/inf_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:drawableRight="@drawable/chevron"
+            android:gravity="center_vertical"
+            android:onClick="onInfo"
+            android:text="  Информация о приложение" />
+
+        <Button
+            android:id="@+id/exit_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:drawableRight="@drawable/chevron"
+            android:gravity="center_vertical"
+            android:onClick="onExit"
+            android:text="  Выход" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -142,4 +188,5 @@
                 android:textSize="10dp" />
         </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>
