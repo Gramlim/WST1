@@ -3,7 +3,9 @@ package com.example.world_skils_test;
 import android.app.ListActivity;
 //import android.graphics.Point;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.yandex.mapkit.geometry.Point;
 import com.yandex.mapkit.Animation;
@@ -45,6 +47,14 @@ public class bankomat_list_activity extends ListActivity {
         super.onStart();
         mapview.onStart();
         MapKitFactory.getInstance().onStart();
+    }
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        mapview.getMap().move(
+                new CameraPosition(new Point(55.783724, 38.445249), 15.0f, 0.0f, 0.0f),
+                new Animation(Animation.Type.SMOOTH, 0),
+                null);
     }
 }
 
