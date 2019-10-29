@@ -13,10 +13,10 @@ public class ValCurs {
         public List<Valuet> list;
 
         @Attribute(name = "Data")
-        public String data;
+        public String _Date;
 
         @Attribute(name = "name")
-        public String name;
+        public String _name;
 
         public List<Valuet> getList() {
             return this.list;

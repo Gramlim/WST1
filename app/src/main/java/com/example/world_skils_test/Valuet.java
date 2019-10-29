@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 public class Valuet {
 
     @Element(name = "CharCode")
-    private String code;
+    private String charcode;
     @Element(name = "Name")
     private String name;
     @Element(name = "Value")
@@ -23,7 +23,7 @@ public class Valuet {
     private String id;
 
     public String getCharCode(){
-        return this.code;
+        return this.charcode;
     }
     public String getName (){
         return this.name;
@@ -31,6 +31,7 @@ public class Valuet {
     public String getValue (){
         return this.value;
     }
+    /*
     public String getId(){
         return this.id;
     }
@@ -38,6 +39,7 @@ public class Valuet {
     public void setCharCode (String code){
         this.code = code;
     }
+
     public void setName (String name){
         this.name = name;
     }
@@ -47,6 +49,8 @@ public class Valuet {
     public void setId (String id){
         this.id = id;
     }
+
+     */
 
 
 }

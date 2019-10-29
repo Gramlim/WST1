@@ -18,25 +18,25 @@ public class CustomAdapter extends ArrayAdapter<Valuet> {
 
     private final Activity context;
     private final List<Valuet> listValuet;
-    public CustomAdapter(Callback<ValCurs> context, List<Valuet> valuet) {
+    public CustomAdapter(Activity context, List<Valuet> valuet) {
         super(context,R.layout.valuet_item, valuet);
         this.listValuet = valuet;
-        this.context = (Activity) context;
+        this.context = context;
     }
     static class ViewHolder {
         public TextView name;
-        public TextView code;
+        public TextView charcode;
         public TextView value;
 
         ViewHolder(View view) {
             this.name = view.findViewById(R.id.name_txt);
-            this.code = view.findViewById(R.id.code_txt);
+            this.charcode = view.findViewById(R.id.code_txt);
             this.value = view.findViewById(R.id.value_txt);
         }
 
         void setData (Valuet valuet){
             this.name.setText(valuet.getName());
-            this.code.setText(valuet.getCharCode());
+            this.charcode.setText(valuet.getCharCode());
             this.value.setText(valuet.getValue());
         }
     }

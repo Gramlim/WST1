@@ -18,9 +18,9 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 public class valuet_list_activity extends ListActivity {
 
 
-    private Context listValue;
-    private Object Valuet;
-    private Object List;
+    //private Context listValue;
+    //private Object Valuet;
+    //private Object List;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class valuet_list_activity extends ListActivity {
         setContentView(R.layout.valuet_layout);
         final List<Valuet> listValuet;
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                .baseUrl("http://www.cbr.ru/scripts/XML_daily.asp")
+                .baseUrl("http://www.cbr.ru/")
                 .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build();
         ServerAPI api = retrofit.create(ServerAPI.class);
@@ -47,20 +47,15 @@ public class valuet_list_activity extends ListActivity {
 
             }
 
-            private void setDataToList(List<Valuet> listValuet) {
-                setListAdapter(new CustomAdapter(this, listValuet));
-            }
-
             @Override
             public void onFailure(Call<ValCurs> call, Throwable t) {
-                TextView tv = findViewById(R.id.valut_war);
+                TextView tv = findViewById(R.id.valute_name);
                 tv.setText("Fail");
             }
         });
-
-
-
-
-
     }
+        private void setDataToList(List<Valuet> listValuet  ) {
+            setListAdapter(new CustomAdapter(this, listValuet));
+        }
 }
+
