@@ -1,7 +1,5 @@
 package com.example.world_skils_test;
 
-import androidx.annotation.AttrRes;
-
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
@@ -12,7 +10,7 @@ public class ValCurs {
         @ElementList(inline = true)
         public List<Valuet> list;
 
-        @Attribute(name = "Data")
+        @Attribute(name = "Date")
         public String _Date;
 
         @Attribute(name = "name")

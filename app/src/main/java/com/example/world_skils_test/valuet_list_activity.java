@@ -1,11 +1,14 @@
 package com.example.world_skils_test;
 import android.app.ListActivity;
-import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.world_skils_test.CustomAdapter;
+import com.example.world_skils_test.R;
+import com.example.world_skils_test.ServerAPI;
+import com.example.world_skils_test.ValCurs;
+import com.example.world_skils_test.Valuet;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -41,7 +44,7 @@ public class valuet_list_activity extends ListActivity {
                     setDataToList(response.body().getList());
 
                 } else {
-                    TextView tvv = findViewById(R.id.valut_war);
+                    TextView tvv = findViewById(R.id.valute_name);
                     tvv.setText(response.message());
                 }
 

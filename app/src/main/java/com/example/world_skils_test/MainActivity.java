@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
         linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,bankomat_list_activity.class);
+                Intent intent = new Intent(MainActivity.this, bankomat_list_activity.class);
                 startActivity(intent);
             }
         });
         linear2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,valuet_list_activity.class);
+                Intent intent = new Intent(MainActivity.this, valuet_list_activity.class);
                 startActivity(intent);
             }
         });

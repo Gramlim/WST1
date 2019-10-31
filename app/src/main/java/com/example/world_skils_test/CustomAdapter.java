@@ -1,17 +1,13 @@
 package com.example.world_skils_test;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Callback;
 
 public class CustomAdapter extends ArrayAdapter<Valuet> {
 
@@ -19,7 +15,7 @@ public class CustomAdapter extends ArrayAdapter<Valuet> {
     private final Activity context;
     private final List<Valuet> listValuet;
     public CustomAdapter(Activity context, List<Valuet> valuet) {
-        super(context,R.layout.valuet_item, valuet);
+        super(context, R.layout.valuet_item, valuet);
         this.listValuet = valuet;
         this.context = context;
     }

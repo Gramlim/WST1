@@ -3,20 +3,29 @@ package com.example.world_skils_test;
 import android.app.ListActivity;
 //import android.graphics.Point;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.yandex.mapkit.geometry.Point;
 import com.yandex.mapkit.Animation;
 import com.yandex.mapkit.MapKitFactory;
 import com.yandex.mapkit.map.CameraPosition;
 import com.yandex.mapkit.mapview.MapView;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 
 public class bankomat_list_activity extends ListActivity {
     private MapView mapview;
+
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -29,11 +38,30 @@ public class bankomat_list_activity extends ListActivity {
                 new Animation(Animation.Type.SMOOTH, 0),
                 null);
 
-        String[] values = new String[]{"Москва,ул.Вавилова,д.7","Москва,ул.Вавилова,д.8",
-                "Москва,ул.Вавилова,д.9","Москва,ул.Вавилова,д.10","Москва,ул.Вавилова,д.11"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.item_bank, R.id.adres, values);
-        setListAdapter(adapter);
+        final List<Home> listHome;
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        Retrofit retrofit = new retrofit2.Retrofit.Builder()
+                .baseUrl("http://intelligent-system.online/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        adres_interface api = retrofit.create(adres_interface.class);
+        api.getData().enqueue(new Callback<HomeAdres>() {
+            @Override
+            public void onResponse(Call<HomeAdres> call, Response<HomeAdres> response) {
+                if (response.isSuccessful()) {
+                    setDataToList(response.body().getList());
+                } else {
+                    TextView tvv = findViewById(R.id.title_bank);
+                    tvv.setText(response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HomeAdres> call, Throwable t) {
+                TextView tv = findViewById(R.id.title_bank);
+                tv.setText("Fail");
+            }
+        });
     }
     @Override
     protected void onStop() {
@@ -48,13 +76,9 @@ public class bankomat_list_activity extends ListActivity {
         mapview.onStart();
         MapKitFactory.getInstance().onStart();
     }
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-        mapview.getMap().move(
-                new CameraPosition(new Point(55.783724, 38.445249), 15.0f, 0.0f, 0.0f),
-                new Animation(Animation.Type.SMOOTH, 0),
-                null);
+    void setDataToList(List<Home> sss){
+        setListAdapter(new CustomAdapterAdres(this,sss));
     }
+
 }
 

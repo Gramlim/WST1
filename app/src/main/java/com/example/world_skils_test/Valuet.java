@@ -31,26 +31,4 @@ public class Valuet {
     public String getValue (){
         return this.value;
     }
-    /*
-    public String getId(){
-        return this.id;
-    }
-
-    public void setCharCode (String code){
-        this.code = code;
-    }
-
-    public void setName (String name){
-        this.name = name;
-    }
-    public void setValue (String value){
-        this.value = value;
-    }
-    public void setId (String id){
-        this.id = id;
-    }
-
-     */
-
-
 }
