@@ -1,16 +1,24 @@
 package com.example.world_skils_test;
 
 import android.app.ListActivity;
-//import android.graphics.Point;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.yandex.mapkit.geometry.Point;
-import com.yandex.mapkit.Animation;
+//import com.yandex.mapkit.geometry.Point;
+//import com.yandex.mapkit.Animation;
 import com.yandex.mapkit.MapKitFactory;
-import com.yandex.mapkit.map.CameraPosition;
+//import com.yandex.mapkit.map.CameraPosition;
 import com.yandex.mapkit.mapview.MapView;
 
 import java.util.List;
@@ -23,12 +31,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 
-public class bankomat_list_activity extends ListActivity {
-    private MapView mapview;
-
+public class bankomat_list_activity extends ListActivity implements OnMapReadyCallback {
+    //private MapView mapview;
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
+        /*
         MapKitFactory.setApiKey("f417b19f-469c-4852-bcd5-ce84f5a402bc");
         MapKitFactory.initialize(this);
         setContentView(R.layout.layout_bank);
@@ -37,6 +46,11 @@ public class bankomat_list_activity extends ListActivity {
                 new CameraPosition(new Point(55.807068, 38.424886), 15.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 0),
                 null);
+
+         */
+      MapFragment mapFragment = (MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
         final List<Home> listHome;
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
@@ -63,6 +77,7 @@ public class bankomat_list_activity extends ListActivity {
             }
         });
     }
+    /*
     @Override
     protected void onStop() {
         super.onStop();
@@ -75,10 +90,18 @@ public class bankomat_list_activity extends ListActivity {
         super.onStart();
         mapview.onStart();
         MapKitFactory.getInstance().onStart();
-    }
-    void setDataToList(List<Home> sss){
-        setListAdapter(new CustomAdapterAdres(this,sss));
+        }
+
+     */
+
+    void setDataToList(List<Home> building){
+        setListAdapter(new CustomAdapterAdres(this,building));
     }
 
+    public void onMapReady(GoogleMap map) {
+        map.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0))
+                .title("Marker"));
+    }
 }
 

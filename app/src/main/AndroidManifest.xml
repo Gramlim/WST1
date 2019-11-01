@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.world_skils_test" >
+
     <uses-permission
         android:name= "android.permission.INTERNET" />
     <application
@@ -10,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,6 +48,9 @@
         <activity android:name=".about_app_class">
 
         </activity>
+        <meta-data
+        android:name = "com.google.android.geo.API_KEY"
+        android:value="AIzaSyA9aL8BMx10bJZQY5k61_t18i-mL1S41r4"/>
     </application>
 
 </manifest>
