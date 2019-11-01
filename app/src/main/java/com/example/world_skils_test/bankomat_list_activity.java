@@ -36,11 +36,11 @@ public class bankomat_list_activity extends ListActivity implements OnMapReadyCa
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.layout_bank);
         /*
         MapKitFactory.setApiKey("f417b19f-469c-4852-bcd5-ce84f5a402bc");
         MapKitFactory.initialize(this);
-        setContentView(R.layout.layout_bank);
+
         mapview = (MapView)findViewById(R.id.mapview);
         mapview.getMap().move(
                 new CameraPosition(new Point(55.807068, 38.424886), 15.0f, 0.0f, 0.0f),
