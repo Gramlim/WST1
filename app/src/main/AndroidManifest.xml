@@ -30,7 +30,7 @@
         <activity android:name=".App">
 
         </activity>
-        <activity android:name=".auth_class">
+        <activity android:name=".test_auth.auth_class">
 
         </activity>
         <activity android:name=".main_class">
