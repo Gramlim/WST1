@@ -49,28 +49,10 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txt_bank_card"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:background="#EFEFF4"
-            android:gravity="bottom"
-            android:text="Карты" />
-
         <ListView
             android:id="@android:id/list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/txt_bank_score"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:background="#EFEFF4"
-            android:gravity="bottom"
-            android:text="Карты" />
-
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,91 +61,15 @@
         android:background="#212121"
         android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bottom_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:orientation="horizontal">
+            app:menu="@layout/bottom_menu"/>
 
-            <ImageButton
-                android:id="@+id/main_wind_png_set"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:background="#212121"
-                app:srcCompat="@drawable/home" />
 
-            <ImageButton
-                android:id="@+id/pay_png_main_set"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#212121"
-                app:srcCompat="@drawable/pay" />
-
-            <ImageButton
-                android:id="@+id/history_png_set"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#212121"
-                app:srcCompat="@drawable/history" />
-
-            <ImageButton
-                android:id="@+id/dialog_png_set"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#212121"
-                app:srcCompat="@drawable/dialogs" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/main_wind_txt_set"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|top"
-                android:text="Главный"
-                android:textColor="#9B59B6"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/pay_txt_set"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|top"
-                android:text="Платежи"
-                android:textColor="#8E8E93"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/history_txt_set"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|top"
-                android:text="История"
-                android:textColor="#8E8E93"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/dialog_txt_set"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|top"
-                android:text="Диалоги"
-                android:textColor="#8E8E93"
-                android:textSize="10dp" />
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

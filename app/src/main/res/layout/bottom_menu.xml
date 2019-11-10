@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item android:id="@+id/menu_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/home" />
+    <item android:id="@+id/menu_pay"
+        android:title="@string/menu_pay"
+        android:icon="@drawable/pay" />
+    <item android:id="@+id/menu_dialogs"
+        android:title="@string/menu_dialogs"
+        android:icon="@drawable/dialogs" />
+
+</menu>
